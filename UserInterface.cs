@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class UserInterface
+    public class UserInterface
     {
+        int CupsPerPitcher;
+
+
+        public UserInterface()
+        {
+            CupsPerPitcher = 6;
+        }
+
+
     }
 }
