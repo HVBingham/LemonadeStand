@@ -10,8 +10,8 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Store store = new Store();
-            store.RunStore();
+            UserInterface user = new UserInterface();
+            user.NeedToGOToStore();
         }
     }
 }

@@ -8,16 +8,20 @@ namespace LemonadeStand
 {
     public class Game
     {
-        string LemonadeStand;
+
+        
+      
 
         public Game()
         {
-         
+          
         }
         public void DisplayRules()
         {
 
+
         }
+        
 
 
 

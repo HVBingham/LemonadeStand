@@ -66,9 +66,7 @@ namespace LemonadeStand
             return ActualTemp;
             
         }
-        public void DisplayActual()
-        {
-        }        
+         
         
 
 

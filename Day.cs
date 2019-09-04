@@ -7,18 +7,26 @@ using System.Threading.Tasks;
 namespace LemonadeStand
 {
     public class Day
-    { 
-       
-        int Profit;
-        Weather CurrentWeather = new Weather();
+    {
+
+        double DaysProfit;
+        Weather CurrentWeather;
 
         public Day()
         {
-
+            CurrentWeather = new Weather();
+            DaysProfit = 0;
 
 
         }
+        public void TotalCustomers()
+        {
+        }
+        public void DaysWeather()
+        {
 
+        }
+        
 
 
     }
