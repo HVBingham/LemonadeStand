@@ -8,24 +8,24 @@ namespace LemonadeStand
 {
     public class Store
     {
-       public int Cups;
-       public int Ice;
-       public int Lemons;
-       public int CupsOfSugar;
-      
+        public int Cups;
+        public int Ice;
+        public int Lemons;
+        public int CupsOfSugar;
+
 
         public Store()
         {
-          
+
 
         }
 
         public void DisplayWelcome()
         {
-            Console.WriteLine("Welcome to the store! Here you can buy all of the things you will need for your lemonade stande.");
+            Console.WriteLine("Welcome to the store! Here you can buy all of the things you will need for your lemonade stand.");
         }
         public int PurchaseCups()
-        {  
+        {
             Console.WriteLine("First please choose an amount of cups you would like to buy. Reminder it's a good idea to stock up on lots of cups since they never go bad.");
             Console.WriteLine("25 Cups for $0.99" + "\n" + "50 Cups for $1.75" + "\n" + "100 Cups for $3.08");
             Console.WriteLine("Write the number of cups you would like to purchase. Input '25' , '50' , '100'");
@@ -47,7 +47,7 @@ namespace LemonadeStand
                     break;
             }
         }
-       
+
         //public double PriceForCups()
         //{
         //    double PaperCups;
@@ -70,7 +70,7 @@ namespace LemonadeStand
         public int PurchaseIce()
         {
             Console.WriteLine("Now it's time to buy ice. Please choose the amount of ice cubes you would like to buy. Reminder that your ice will melt at the end of everyday. You will need to puchase new ice EVERYDAY!");
-            Console.WriteLine("100 ice cubes for $0.79" + "\n" + "250 ice cubes for $2.08" +"\n" +"500 ice cubes for $3.62");
+            Console.WriteLine("100 ice cubes for $0.79" + "\n" + "250 ice cubes for $2.08" + "\n" + "500 ice cubes for $3.62");
             Console.WriteLine("Write the number of Ice cubes you would like to purchse. Input either '100', '250', '500'");
             Ice = int.Parse(Console.ReadLine());
             switch (Ice)
@@ -118,13 +118,13 @@ namespace LemonadeStand
             switch (CupsOfSugar)
             {
                 case 8:
-                    return CupsOfSugar +=8;
+                    return CupsOfSugar += 8;
                     break;
                 case 20:
-                    return CupsOfSugar +=20;
+                    return CupsOfSugar += 20;
                     break;
                 case 48:
-                    return CupsOfSugar +=48;
+                    return CupsOfSugar += 48;
                     break;
                 default:
                     Console.WriteLine("Please input a valid Sugar amount.");
@@ -150,11 +150,11 @@ namespace LemonadeStand
         //            return Sugar;
         //            break;
         //    }
-           
+
         //}
         public int PurchaseLemons()
         {
-                        
+
             Console.WriteLine("Time to buy all the lemons. Please choose the amount of lemons you would like to buy. Reminder that lemons will go bad. You will want to only purchase the amount you need per day.");
             Console.WriteLine("10 lemons for $0.59" + "\n" + "30 lemons for $2.39" + "\n" + "75 lemons $4.24");
             Console.WriteLine("Write the amount of lemons you would like to purchse. Input either '10', '30', '75'");
@@ -194,28 +194,28 @@ namespace LemonadeStand
         //            return lemons;
         //            break;
         //    }
-            
-        //}
-        //public double DeductPayment(double item, double wallet)
-        //{
-        //    //double WalletTotal;
-        //    if (wallet >= item)
-        //    {
-        //        wallet -= item;
-        //        return wallet;
-
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("You don't have enought money to buy this item.");
-        //        return //ToDo Find a way to return it to the funciton that it purchases from;
-        //    }
 
         //}
-        
+        public double DeductPayment(double item, double wallet, double method)
+        {
+
+            if (wallet >= item)
+            {
+                wallet -= item;
+                return wallet;
+
+            }
+            else
+            {
+                Console.WriteLine("You don't have enought money to buy this item. \n Go back and purchase what you have the money for.");
+                return method;
+                }
+
+        }
+
 
 
 
     }
- 
+    }
 }

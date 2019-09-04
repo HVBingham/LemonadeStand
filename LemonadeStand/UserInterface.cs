@@ -8,30 +8,39 @@ namespace LemonadeStand
 {
     public class UserInterface
     {
+        string userName;
         string LemonadeStandName;
-        Player PlayerOne;
+        Player playerOne;
 
         public UserInterface()
         {
-            PlayerOne = new Player();
+            playerOne = new Player();
+            playerOne.Name = userName;
+            
+           
             
           
         }
+        public string UserName()
+        {
+            userName = playerOne.GetPlayerName();
+            return userName;
+        }
         public string StandName()
         {
-            Console.WriteLine("Please enter the name of you lemonade stand");
+            Console.WriteLine(userName +" please enter the name of your lemonade stand");
             LemonadeStandName = Console.ReadLine();
             return LemonadeStandName;
         }
         public void NeedToGOToStore()
         {
-            Console.WriteLine("Do you need to go to the Walmart to pick up supplies today?");
+            Console.WriteLine("Do you need to go to the Walmart to pick up supplies today for " +LemonadeStandName +"?");
             String userAnswer = Console.ReadLine();
             if (userAnswer=="yes")
             {
                VistStore();
             }
-         
+         //ToDo add and else statement so that they can play game with supplies they have.
         }
         public void VistStore()
         {
