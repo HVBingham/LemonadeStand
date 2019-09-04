@@ -8,12 +8,12 @@ namespace LemonadeStand
 {
     public class UserInterface
     {
-        int CupsPerPitcher;
+       
 
 
         public UserInterface()
         {
-            CupsPerPitcher = 6;
+          
         }
 
 

@@ -10,5 +10,11 @@ namespace LemonadeStand
     {
         string Name;
         double TotalProfit;
+        public double Wallet;
+
+        public Player()
+        {
+            Wallet = 20.00;
+        }
     }
 }

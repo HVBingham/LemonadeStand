@@ -8,11 +8,25 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-        double Wallet;
-        int Cups;
-        int Lemons;
-        int CupsofSugar;
-        int Ice;
+        //double Wallet;
+        //int Cups;
+        //int Lemons;
+        //int CupsOfSugar;
+        //int Ice;
+
+        //public Inventory()
+        //{
+        //    Wallet = 20.00;
+        //    Cups = 0;
+        //    Lemons = 0;
+        //    CupsOfSugar = 0;
+        //    Ice = 0;
+
+        //}
+
+
+
+
 
     }
 }

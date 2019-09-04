@@ -8,15 +8,17 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        int ThirstLevel;
-        int HeatLevel;
-        double Budget;
+        //int ThirstLevel;
+        //int HeatLevel;
+        //double Budget;
 
 
-        public Customer()
-        {
-           
-        }
+        //public Customer()
+        //{
+        //    ThirstLevel = 0;
+        //    HeatLevel = 0;
+        //    Budget = 0;
+        //}
 
      
 

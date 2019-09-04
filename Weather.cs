@@ -13,6 +13,8 @@ namespace LemonadeStand
 
         int TempOfDay;
         string Clearity;
+        int ForeCastedTemp;
+        string ForeCastedClearity;
         public Weather()
         {
             SkyClearity= new List<string>();
@@ -21,6 +23,11 @@ namespace LemonadeStand
             SkyClearity.Add("Rainy");
             SkyClearity.Add("Cloudy");
             SkyClearity.Add("Clear");
+            ForeCastedTemp = FindHeat(55, 98);
+            ForeCastedClearity = FindClearity(SkyClearity);
+            
+
+
         }
 
         public int FindHeat(int min, int max)
@@ -40,14 +47,6 @@ namespace LemonadeStand
             return FinalClearity;
 
         }
-        public void WeatherForecast()
-        {
-            TempOfDay = FindHeat(50, 98);
-            Clearity = FindClearity(SkyClearity);
-            Console.WriteLine("Todays Weather Forecast is "+TempOfDay +" Degrees and " +Clearity  );
-
-            
-        }
         public int Randomizer(int min, int max)
         {
             Random rnd = new Random();
@@ -55,15 +54,22 @@ namespace LemonadeStand
             return RandomNumber;
 
         }
-
-        public void ActualWeather(List<string> SkyClearity)
+        public void ForcastedWeather ()
         {
-            int ForecastedTemp =FindHeat(50, 95);
-            int TempVariance = Randomizer(-5, 5);
-            int ActualTemp = ForecastedTemp + TempVariance;
-
-
+            Console.WriteLine("Todays forcast is"+ForeCastedTemp +" Degrees and " +ForeCastedClearity);
         }
+        public int ActualTempurature()
+        {
+            
+            int TempVariance = Randomizer(-3, 3);
+            int ActualTemp = ForeCastedTemp + TempVariance;
+            return ActualTemp;
+            
+        }
+        public void DisplayActual()
+        {
+        }        
+        
 
 
 

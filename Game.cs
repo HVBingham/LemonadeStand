@@ -9,8 +9,15 @@ namespace LemonadeStand
     public class Game
     {
         string LemonadeStand;
-        int DayCounter;
 
+        public Game()
+        {
+         
+        }
+        public void DisplayRules()
+        {
+
+        }
 
 
 

@@ -10,6 +10,8 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+            Store store = new Store();
+            store.RunStore();
         }
     }
 }
