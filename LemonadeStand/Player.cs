@@ -10,8 +10,12 @@ namespace LemonadeStand
     {
         public string Name;
         Inventory PInventory;
-       public double Wallet;
-       public double TotalProfit;
+        public double Wallet;
+        public double TotalProfit;
+        public int Cups;
+        public int Lemons;
+        public int Ice;
+        public int CupsOfSugar;
      
        
 
@@ -20,10 +24,23 @@ namespace LemonadeStand
             PInventory  = new Inventory();
             Wallet = 20.00;
             TotalProfit = 0;
-            PInventory.Cups = 0;
-            PInventory.Lemons = 0;
-            PInventory.Ice = 0;
-            PInventory.CupsOfSugar = 0;
+            Cups = 0;
+            Lemons = 0;
+            Ice = 0;
+            CupsOfSugar = 0;
+
+        }
+        public int InventoryToPlayer(int item, int inventory)
+        {
+            item = inventory;
+            return item;
+        }
+        public void PushToInvenotry()
+        {
+            InventoryToPlayer(Cups, PInventory.Cups);
+            InventoryToPlayer(Lemons, PInventory.Lemons);
+            InventoryToPlayer(Ice, PInventory.Lemons);
+            InventoryToPlayer(CupsOfSugar, PInventory.CupsOfSugar);
 
         }
         public string GetPlayerName()
@@ -34,25 +51,25 @@ namespace LemonadeStand
         }
         public int PurchaseCups(Store store)
         {
-           PInventory.Cups = store.PurchaseCups();
-            return PInventory.Cups;
+            Cups = store.PurchaseCups();
+            return Cups;
 
         }
         public int PurchaseLemons(Store store)
         {
-            PInventory.Lemons = store.PurchaseLemons();
-            return PInventory.Lemons;
+            Lemons = store.PurchaseLemons();
+            return Lemons;
 
         }
         public int PurchaseSugar(Store store)
         {
-            PInventory.CupsOfSugar = store.PurchaseSugar();
-            return PInventory.CupsOfSugar;
+           CupsOfSugar = store.PurchaseSugar();
+            return CupsOfSugar;
         }
         public int PurchaseIce(Store store)
         {
-            PInventory.Ice = store.PurchaseIce();
-            return PInventory.Ice;
+            Ice = store.PurchaseIce();
+            return Ice;
 
         }
         

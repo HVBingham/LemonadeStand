@@ -9,12 +9,10 @@ namespace LemonadeStand
     public class  Weather
     {
         List<string> SkyClearity;
+        public  string clearity;
+        private int foreCastedTemp;
         
 
-        int TempOfDay;
-        string Clearity;
-        int ForeCastedTemp;
-        string ForeCastedClearity;
         public Weather()
         {
             SkyClearity= new List<string>();
@@ -22,14 +20,19 @@ namespace LemonadeStand
             SkyClearity.Add("OverCast");
             SkyClearity.Add("Rainy");
             SkyClearity.Add("Cloudy");
-            SkyClearity.Add("Clear");
-            ForeCastedTemp = FindHeat(55, 98);
-            ForeCastedClearity = FindClearity(SkyClearity);
+            
+
             
 
 
         }
-
+        public int ForCastedTemp
+          {
+            get{
+                return foreCastedTemp;
+             }
+           
+          }
         public int FindHeat(int min, int max)
         {
             Random Tempurature = new Random();
@@ -39,7 +42,7 @@ namespace LemonadeStand
 
 
         }
-        public string FindClearity(List<string>SkyClearity)
+        public string FindClearity()
         {
             Random clearity = new Random();
             int i = clearity.Next(SkyClearity.Count);
@@ -47,27 +50,23 @@ namespace LemonadeStand
             return FinalClearity;
 
         }
-        public int Randomizer(int min, int max)
-        {
-            Random rnd = new Random();
-            int RandomNumber = rnd.Next(min, max);
-            return RandomNumber;
+        //public string ForecastedClearity()
+        //{
+        //    clearity = FindClearity();
+        //    return clearity;
+        //}
+        //public int ForecastedHeat()
+        //{
+        //    foreCastedTemp = FindHeat(50, 98);
+        //    return foreCastedTemp;
 
-        }
-        public void ForcastedWeather ()
-        {
-            Console.WriteLine("Todays forcast is"+ForeCastedTemp +" Degrees and " +ForeCastedClearity);
-        }
-        public int ActualTempurature()
-        {
-            
-            int TempVariance = Randomizer(-3, 3);
-            int ActualTemp = ForeCastedTemp + TempVariance;
-            return ActualTemp;
-            
-        }
-         
-        
+        //}
+       
+
+
+
+
+
 
 
 

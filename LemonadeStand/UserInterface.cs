@@ -46,13 +46,13 @@ namespace LemonadeStand
         {
             Store Walmart = new Store();
             Walmart.DisplayWelcome();
-            PlayerOne.PurchaseCups(Walmart);
+            playerOne.PurchaseCups(Walmart);
             Console.Clear();
-            PlayerOne.PurchaseLemons(Walmart);
+            playerOne.PurchaseLemons(Walmart);
             Console.Clear();
-            PlayerOne.PurchaseSugar(Walmart);
+            playerOne.PurchaseSugar(Walmart);
             Console.Clear();
-            PlayerOne.PurchaseIce(Walmart);
+            playerOne.PurchaseIce(Walmart);
             Console.Clear();
         }
 

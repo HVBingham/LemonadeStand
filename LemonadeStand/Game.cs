@@ -29,15 +29,15 @@ namespace LemonadeStand
         {
 
         }
-        public bool IsGameOver(Player player)
-        {
-            if(player.Wallet == 0)
-            {
-                Console.WriteLine(player.TotalProfit +"This is your total Profit for the game.");
-                gameOver = true;
-            }
+        //public bool IsGameOver(Player player)
+        //{
+        //    if(player.Wallet == 0)
+        //    {
+        //        Console.WriteLine(player.TotalProfit +"This is your total Profit for the game.");
+        //        gameOver = true;
+        //    }
 
-        }
+        //}
 
 
 

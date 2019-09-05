@@ -22,11 +22,31 @@ namespace LemonadeStand
         public void TotalCustomers()
         {
         }
-        public void DaysWeather()
+        
+        public int Randomizer(int min, int max)
         {
+            Random rnd = new Random();
+            int RandomNumber = rnd.Next(min, max);
+            return RandomNumber;
 
         }
+        //public void DaysWeather()
+        //{
+        //    int fHeat = ForecastedHeat(CurrentWeather);
+        //    string fClearity = ForecastedClearity(CurrentWeather);
+           
+        //    Console.WriteLine("Todays forecast is " +fClearity +" and " +fHeat +" Degrees.");
+
+        //    int rnd = Randomizer(-3, 3);
+        //    int dayHeat = fHeat + rnd;
+
+        //    Console.WriteLine("Todays weather is " +fClearity +" and " +dayHeat +" Degrees.");
+            
+        //}
         
+        
+      
+
 
 
     }

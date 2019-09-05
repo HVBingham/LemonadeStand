@@ -10,7 +10,10 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            
+            UserInterface User = new UserInterface();
+            User.UserName();
+            User.StandName();
+            User.NeedToGOToStore();
         }
     }
 }
