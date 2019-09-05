@@ -9,14 +9,13 @@ namespace LemonadeStand
     public class Game
     {
         UserInterface User;
-        bool gameOver;
         
       
 
         public Game()
         {
             User = new UserInterface();
-            gameOver = false;
+           
           
         }
         public void DisplayRules()
@@ -29,15 +28,7 @@ namespace LemonadeStand
         {
 
         }
-        //public bool IsGameOver(Player player)
-        //{
-        //    if(player.Wallet == 0)
-        //    {
-        //        Console.WriteLine(player.TotalProfit +"This is your total Profit for the game.");
-        //        gameOver = true;
-        //    }
-
-        //}
+       
 
 
 

@@ -21,7 +21,7 @@ namespace LemonadeStand
             string clearity = weather.FindClearity();
            
             Random randomCustomers = new Random();
-            switch (clearity + heat)
+            switch (clearity)
             {
                 case "Sunny":
                     customers = randomCustomers.Next(145, 200);
@@ -40,7 +40,7 @@ namespace LemonadeStand
             Console.WriteLine("Today you had " + customers +" Customers"); ;
         }
       
-        public void ChanceOfSale()
+        public void ChanceOfSale(Weather weather)
         {
             int heat = weather.FindHeat(50, 98);
             Random Chance = new Random();

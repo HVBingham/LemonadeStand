@@ -19,8 +19,12 @@ namespace LemonadeStand
 
 
         }
-        public void TotalCustomers()
+        
+        public void TotalCustomers(Customer customers)
         {
+
+            customers.HowManyCustomers(CurrentWeather);
+            customers.ChanceOfSale(CurrentWeather);
         }
         
         public int Randomizer(int min, int max)
@@ -30,20 +34,7 @@ namespace LemonadeStand
             return RandomNumber;
 
         }
-        //public void DaysWeather()
-        //{
-        //    int fHeat = ForecastedHeat(CurrentWeather);
-        //    string fClearity = ForecastedClearity(CurrentWeather);
-           
-        //    Console.WriteLine("Todays forecast is " +fClearity +" and " +fHeat +" Degrees.");
-
-        //    int rnd = Randomizer(-3, 3);
-        //    int dayHeat = fHeat + rnd;
-
-        //    Console.WriteLine("Todays weather is " +fClearity +" and " +dayHeat +" Degrees.");
-            
-        //}
-        
+      
         
       
 
