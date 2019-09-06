@@ -16,9 +16,9 @@ namespace LemonadeStand
             customers = 0;
             buyPercentage = 0;
         }
-        public void HowManyCustomers(Weather weather)
+        public void HowManyCustomers(Day day)
         {
-            string clearity = weather.FindClearity();
+            string clearity = day.clearity;
            
             Random randomCustomers = new Random();
             switch (clearity)
@@ -40,9 +40,9 @@ namespace LemonadeStand
             Console.WriteLine("Today you had " + customers +" Customers"); ;
         }
       
-        public void ChanceOfSale(Weather weather)
+        public void ChanceOfSale(Day day)
         {
-            int heat = weather.FindHeat(50, 98);
+            int heat = day.actualTemp;
             Random Chance = new Random();
 
             if (heat >= 90)

@@ -12,6 +12,9 @@ namespace LemonadeStand
         double DaysProfit;
         Weather CurrentWeather;
         double lemonadePrice;
+        int foreCastedTemp;
+        public string clearity;
+        public int actualTemp;
 
         public Day()
         {
@@ -21,6 +24,13 @@ namespace LemonadeStand
 
 
         }
+        public void DisplayForCast()
+        {
+            foreCastedTemp = CurrentWeather.FindHeat();
+            clearity = CurrentWeather.FindClearity();
+            Console.WriteLine("The Forcasted Weather For the day is " +clearity +" and " +foreCastedTemp +" Degrees.");
+        }
+       
         public void SetRecipe()
         {
             newRecipe.SetRecipe();
@@ -32,22 +42,22 @@ namespace LemonadeStand
             Console.WriteLine("How much would you like to charge per cup for lemonade today?");
             lemonadePrice = double.Parse(Console.ReadLine());
         }
-       
-        public void TotalCustomers(Customer customers)
-        {
-
-            customers.HowManyCustomers(CurrentWeather);
-            customers.ChanceOfSale(CurrentWeather);
-        }
-        
-        public int Randomizer(int min, int max)
+       public int ActualWeather()
         {
             Random rnd = new Random();
-            int RandomNumber = rnd.Next(min, max);
-            return RandomNumber;
+            int RandomNumber = rnd.Next(-3, 3);
+            actualTemp = RandomNumber + foreCastedTemp;
+            Console.WriteLine("It's " +actualTemp +" degrees and " +clearity);
+            return actualTemp;
 
         }
-      
+    
+       
+       
+       
+        
+
+   
         
       
 

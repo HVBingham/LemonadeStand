@@ -13,7 +13,7 @@ namespace LemonadeStand
         public int Lemons;
         public int CupsOfSugar;
         public int Ice;
-
+       
         public Inventory()
         {
            Cups = 0;

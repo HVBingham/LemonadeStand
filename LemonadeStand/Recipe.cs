@@ -12,6 +12,7 @@ namespace LemonadeStand
         int lemons;
         int cupsOfSugar;
         int iceCubes;
+        
         public Recipe()
         {
             
@@ -27,6 +28,7 @@ namespace LemonadeStand
             Console.WriteLine("How many cubes of ice would you like to use per cup?");
             iceCubes = int.Parse(Console.ReadLine());
          }
+
            
         
 

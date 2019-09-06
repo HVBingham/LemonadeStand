@@ -8,9 +8,11 @@ namespace LemonadeStand
 {
     public class  Weather
     {
-        List<string> SkyClearity;
+        public List<string> SkyClearity;
         public  string clearity;
-        private int foreCastedTemp;
+        public int foreCastedTemp;
+        public int actualTemp;
+
         
 
         public Weather()
@@ -26,18 +28,13 @@ namespace LemonadeStand
 
 
         }
-        public int ForCastedTemp
-          {
-            get{
-                return foreCastedTemp;
-             }
-           
-          }
-        public int FindHeat(int min, int max)
+       
+        public int FindHeat()
         {
             Random Tempurature = new Random();
-            int RandomTemp = Tempurature.Next(min, max);
-            return RandomTemp;
+           foreCastedTemp= Tempurature.Next(50,100);
+            return foreCastedTemp;
+          
             
 
 
@@ -50,17 +47,11 @@ namespace LemonadeStand
             return FinalClearity;
 
         }
-        //public string ForecastedClearity()
-        //{
-        //    clearity = FindClearity();
-        //    return clearity;
-        //}
-        //public int ForecastedHeat()
-        //{
-        //    foreCastedTemp = FindHeat(50, 98);
-        //    return foreCastedTemp;
-
-        //}
+        public string ForecastedClearity()
+        {
+            clearity = FindClearity();
+            return clearity;
+        }
        
 
 

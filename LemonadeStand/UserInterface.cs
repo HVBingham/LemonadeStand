@@ -32,10 +32,14 @@ namespace LemonadeStand
             LemonadeStandName = Console.ReadLine();
             return LemonadeStandName;
         }
+        public void DisplayDayForecast(Day day)
+        {
+            day.DisplayForCast();
+        }
         public void NeedToGOToStore()
         {
             Console.WriteLine("Do you need to go to the Walmart to pick up supplies today for " +LemonadeStandName +"?");
-            String userAnswer = Console.ReadLine();
+            String userAnswer = Console.ReadLine().ToLower();
             if (userAnswer=="yes")
             {
                VistStore();
@@ -45,15 +49,7 @@ namespace LemonadeStand
         public void VistStore()
         {
             Store Walmart = new Store();
-            Walmart.DisplayWelcome();
-            playerOne.PurchaseCups(Walmart);
-            Console.Clear();
-            playerOne.PurchaseLemons(Walmart);
-            Console.Clear();
-            playerOne.PurchaseSugar(Walmart);
-            Console.Clear();
-            playerOne.PurchaseIce(Walmart);
-            Console.Clear();
+            playerOne.PurchaseItems(Walmart);
         }
         
 
