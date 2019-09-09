@@ -20,12 +20,11 @@ namespace LemonadeStand
         
         public void SetRecipe()
         {
-            Console.WriteLine("Now we are going to set our recipe for the day.");
-            Console.WriteLine("How many lemons would you like to add per pitcher");
+            UserInterface.RecipeStepOne();
             lemons = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many cups of sugar per pitcher?");
+            UserInterface.RecipeStepTwo();
             cupsOfSugar = int.Parse(Console.ReadLine());
-            Console.WriteLine("How many cubes of ice would you like to use per cup?");
+            UserInterface.RecipeStepThree();
             iceCubes = int.Parse(Console.ReadLine());
          }
 

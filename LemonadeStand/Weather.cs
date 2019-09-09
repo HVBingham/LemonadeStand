@@ -14,7 +14,7 @@ namespace LemonadeStand
         public int actualTemp;
 
         
-
+        
         public Weather()
         {
             SkyClearity= new List<string>();

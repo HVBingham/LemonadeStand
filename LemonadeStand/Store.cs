@@ -20,15 +20,10 @@ namespace LemonadeStand
 
         }
 
-        public void DisplayWelcome()
-        {
-            Console.WriteLine("Welcome to the store! Here you can buy all of the things you will need for your lemonade stand.");
-        }
+     
         public void PurchaseCups(Inventory inventory)
         {
-            Console.WriteLine("First please choose an amount of cups you would like to buy." +"\n" +"Reminder it's a good idea to stock up on lots of cups since they never go bad.");
-            Console.WriteLine("25 Cups for $0.99" + "\n" + "50 Cups for $1.75" + "\n" + "100 Cups for $3.08");
-            Console.WriteLine("Write the number of cups you would like to purchase." +"\n" +"Input '25' , '50' , '100'");
+            UserInterface.CupPurchasingOptions();
            int cups = int.Parse(Console.ReadLine());
             //int cups= ValidateCups(Cups);
             inventory.Cups += cups;
@@ -75,9 +70,7 @@ namespace LemonadeStand
         }
         public void PurchaseIce(Inventory inventory)
         {
-            Console.WriteLine("Now it's time to buy ice." +"\n" +" Please choose the amount of ice cubes you would like to buy." +"\n" +" Reminder that your ice will melt at the end of everyday." +"\n" +" You will need to puchase new ice EVERYDAY!");
-            Console.WriteLine("100 ice cubes for $0.79" + "\n" + "250 ice cubes for $2.08" + "\n" + "500 ice cubes for $3.62");
-            Console.WriteLine("Write the number of Ice cubes you would like to purchse." +"\n" +"Input either '100', '250', '500'");
+            UserInterface.IcePurchasingOptions();
            int cubes = int.Parse(Console.ReadLine());
             //int cubes = ValidateIce(Ice);
                inventory.Ice += cubes;
@@ -122,9 +115,7 @@ namespace LemonadeStand
          }
         public void PurchaseSugar(Inventory inventory)
         {
-            Console.WriteLine("Time to buy cups of sugar." +"\n" +"Please choose the amount of sugar cups you would like to buy." +"\n" +"Reminder that your sugar can get bugs in it." +"\n"  +"You will want to only purchase the amount you will need per day.");
-            Console.WriteLine("8 cups of sugar for $0.55" + "\n" + "20 cups of sugar for $1.52" + "\n" + "48 cups of sugar for $3.48");
-            Console.WriteLine("Write the cups of sugar you would like to purchse." +"\n" +"Input either '8', '20', '48'");
+            UserInterface.SugarPurchasingOptions();
             int sugar = int.Parse(Console.ReadLine());
             //int sugar = ValidateSugar(CupsOfSugar);
              inventory.CupsOfSugar+=sugar;
@@ -170,9 +161,7 @@ namespace LemonadeStand
         public void PurchaseLemons(Inventory inventory)
         {
 
-            Console.WriteLine("Time to buy all the lemons." +"\n" +"Please choose the amount of lemons you would like to buy." +"Reminder that lemons will go bad." +"\n"  +"You will want to only purchase the amount you need per day.");
-            Console.WriteLine("10 lemons for $0.59" + "\n" + "30 lemons for $2.39" + "\n" + "75 lemons $4.24");
-            Console.WriteLine("Write the amount of lemons you would like to purchse." +"\n" +"Input either '10', '30', '75'");
+            UserInterface.LemonPurchasingOptions();
             int lemons = int.Parse(Console.ReadLine());
             inventory.Lemons += lemons;
             

@@ -37,7 +37,7 @@ namespace LemonadeStand
                     break;                 
             }
 
-            Console.WriteLine("Today you had " + customers +" Customers"); ;
+            
         }
       
         public void ChanceOfSale(Day day)
@@ -61,7 +61,7 @@ namespace LemonadeStand
             {
                 buyPercentage = Chance.Next(15, 35);
             }
-            Console.WriteLine("You only had " +buyPercentage +" % buy your lemonade.");
+            
 
         }
 

@@ -15,9 +15,11 @@ namespace LemonadeStand
         int foreCastedTemp;
         public string clearity;
         public int actualTemp;
+        List<Customer> Customers;
 
         public Day()
         {
+            Customers = new List<Customer>();
             newRecipe = new Recipe();
             CurrentWeather = new Weather();
             DaysProfit = 0;
@@ -28,9 +30,27 @@ namespace LemonadeStand
         {
             foreCastedTemp = CurrentWeather.FindHeat();
             clearity = CurrentWeather.FindClearity();
-            Console.WriteLine("The Forcasted Weather For the day is " +clearity +" and " +foreCastedTemp +" Degrees.");
+            UserInterface.DisplayDayForecast(clearity, foreCastedTemp);
         }
-       
+        public void NeedToGOToStore(string name, Player player)
+        {
+            UserInterface.NeedForStore(name);
+            String userAnswer = Console.ReadLine().ToLower();
+            if (userAnswer == "yes")
+            {
+               VistStore(player);
+            }
+            //ToDo add and else statement so that they can play game with supplies they have.
+        }
+        public void VistStore(Player player)
+        {
+            Store Walmart = new Store();
+            UserInterface.DisplayStoreWelcome();
+            player.PurchaseItems(Walmart);
+        }
+
+
+
         public void SetRecipe()
         {
             newRecipe.SetRecipe();
@@ -39,7 +59,7 @@ namespace LemonadeStand
       
         public void SetCupPrice()
         {
-            Console.WriteLine("How much would you like to charge per cup for lemonade today?");
+            UserInterface.CupsPrice();
             lemonadePrice = double.Parse(Console.ReadLine());
         }
        public int ActualWeather()
@@ -47,11 +67,18 @@ namespace LemonadeStand
             Random rnd = new Random();
             int RandomNumber = rnd.Next(-3, 3);
             actualTemp = RandomNumber + foreCastedTemp;
-            Console.WriteLine("It's " +actualTemp +" degrees and " +clearity);
+            UserInterface.DisplayActualWeather(actualTemp, clearity);
             return actualTemp;
 
         }
-    
+        
+        //public int GetCustomers()
+        //{
+
+        //}
+           
+
+        
        
        
        

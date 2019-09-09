@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     public class Inventory
     {
+        
         public double Wallet;
         public int Cups;
         public int Lemons;
@@ -22,8 +23,11 @@ namespace LemonadeStand
            Ice = 0;
 
         }
+       
+       
 
-        
+
+
 
 
 

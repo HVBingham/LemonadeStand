@@ -8,13 +8,14 @@ namespace LemonadeStand
 {
     public class Player
     {
-        public string Name;
-        Inventory PInventory;
+        public string name;
+        public Inventory PInventory;
         public double Wallet;
         public double TotalProfit;
- 
-     
-       
+        public string standName;
+
+
+
 
         public Player()
         {
@@ -27,19 +28,35 @@ namespace LemonadeStand
         
         public string GetPlayerName()
         {
-            Console.WriteLine("Please input your name");
-            Name = Console.ReadLine();
-            return Name;
+
+            UserInterface.UserName();
+            name = Console.ReadLine();
+            return name;
         }
-    
+        public string GetStandName()
+        {
+            UserInterface.StandName(name);
+            standName = Console.ReadLine();
+            return standName;
+        }
+
         public void PurchaseItems(Store store)
         {
             store.PurchaseCups(PInventory);
+            Console.Clear();
             store.PurchaseIce(PInventory);
+            Console.Clear();
             store.PurchaseLemons(PInventory);
+            Console.Clear();
             store.PurchaseSugar(PInventory);
+            Console.Clear();
         }
-
+        public void DisplayItems()
+        {
+            UserInterface.DisplayInventoryItems(PInventory);
+        }
+        
+          
 
 
 
