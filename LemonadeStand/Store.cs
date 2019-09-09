@@ -8,10 +8,10 @@ namespace LemonadeStand
 {
     public class Store
     {
-        public int Cups;
-        public int Ice;
-        public int Lemons;
-        public int CupsOfSugar;
+        public int cups;
+        public int ice;
+        public int lemons;
+        public int sugar;
 
 
         public Store()
@@ -24,33 +24,44 @@ namespace LemonadeStand
         public void PurchaseCups(Inventory inventory)
         {
             UserInterface.CupPurchasingOptions();
-           int cups = int.Parse(Console.ReadLine());
-            //int cups= ValidateCups(Cups);
+            cups = int.Parse(Console.ReadLine());
+            ValidateCups(inventory);
             inventory.Cups += cups;
+            double cupsPrice = PriceForCups(cups);
+            if (inventory.wallet >= cupsPrice)
+            {
+             inventory.wallet = DeductPayment(cupsPrice, inventory.wallet);
+            }
+            else
+            {
+                PurchaseCups(inventory);
+            }
+
+
            
 
 
         }
-        //public int ValidateCups(int cups)
-        //{
-        //    switch (cups)
-        //    {
-        //        case 25:
-        //            return cups;
-        //            break;
-        //        case 50:
-        //            return cups;
-        //            break;
-        //        case 100:
-        //            return cups;
-        //            break;
-        //        default:
-        //            Console.WriteLine("Please pick a vaild cup amount");
-        //            return PurchaseCups();
-        //            break;
-        //    }
+        public void ValidateCups(Inventory inventory)
+        {
+            switch (cups)
+            {
+                case 25:
+                    cups=25;
+                    break;
+                case 50:
+                    cups=50;
+                    break;
+                case 100:
+                    cups=100;
+                    break;
+                default:
+                    Console.WriteLine("Please pick a vaild cup amount");
+                    PurchaseCups(inventory);
+                    break;
+            }
 
-        //}
+        }
         public double PriceForCups(int cups)
         {
             double paperCups = 0;
@@ -68,33 +79,43 @@ namespace LemonadeStand
             }
             return paperCups;
         }
+       
         public void PurchaseIce(Inventory inventory)
         {
             UserInterface.IcePurchasingOptions();
-           int cubes = int.Parse(Console.ReadLine());
-            //int cubes = ValidateIce(Ice);
-               inventory.Ice += cubes;
-         
+            int cubes = int.Parse(Console.ReadLine());
+            ValidateIce(inventory);
+            inventory.Ice += cubes;
+            double icePrice = PriceForIce(cubes);
+            if (inventory.wallet >= icePrice)
+            {
+                inventory.wallet = DeductPayment(icePrice, inventory.wallet);
+            }
+            else
+            {
+                PurchaseIce(inventory);
+            }
+
         }
-        //public int ValidateIce(int ice)
-        //{
-        //    switch (ice)
-        //    {
-        //        case 100:
-        //            return ice;
-        //            break;
-        //        case 250:
-        //            return ice;
-        //            break;
-        //        case 500:
-        //            return ice;
-        //            break;
-        //        default:
-        //            Console.WriteLine("Please input a valid Ice amount");
-        //            return PurchaseIce();
-        //            break;
-        //    }
-        //}
+        public void ValidateIce(Inventory inventory)
+        {
+            switch (ice)
+            {
+                case 100:
+                    ice = 100;
+                    break;
+                case 250:
+                    ice = 250;
+                    break;
+                case 500:
+                    ice = 500;
+                    break;
+                default:
+                    Console.WriteLine("Please input a valid Ice amount");
+                    PurchaseIce(inventory);
+                    break;
+            }
+        }
 
         public double PriceForIce(int cubes)
         {
@@ -116,76 +137,95 @@ namespace LemonadeStand
         public void PurchaseSugar(Inventory inventory)
         {
             UserInterface.SugarPurchasingOptions();
-            int sugar = int.Parse(Console.ReadLine());
-            //int sugar = ValidateSugar(CupsOfSugar);
+            sugar = int.Parse(Console.ReadLine());
+            ValidateSugar(inventory);
              inventory.CupsOfSugar+=sugar;
+            double sugarPrice = PriceForSugar(sugar);
+            if (inventory.wallet >= sugarPrice)
+            {
+                inventory.wallet = DeductPayment(sugarPrice, inventory.wallet);
+            }
+            else
+            {
+                PurchaseSugar(inventory);
+            }
         }
 
-        //public int ValidateSugar(int sugar)
-        //{
-        //    switch (sugar)
-        //    {
-        //        case 8:
-        //            return CupsOfSugar;
-        //            break;
-        //        case 20:
-        //            return CupsOfSugar;
-        //            break;
-        //        case 48:
-        //            return CupsOfSugar;
-        //            break;
-        //        default:
-        //            Console.WriteLine("Please input a valid Sugar amount.");
-        //            return PurchaseSugar();
-        //            break;
-        //    }
-        //}
-
-        public double PriceForSugar(int Sugar)
+        public void ValidateSugar(Inventory inventory)
         {
-            double sugar = 0;
-            switch (Sugar)
+            switch (sugar)
             {
                 case 8:
-                    sugar = .55;
+                    sugar = 8;
                     break;
                 case 20:
-                    sugar = 1.52;
+                    sugar = 20;
                     break;
                 case 48:
-                    sugar = 3.48;
+                    sugar = 48;
+                    break;
+                default:
+                    Console.WriteLine("Please input a valid Sugar amount.");
+                    PurchaseSugar(inventory);
                     break;
             }
-             return sugar;
         }
+
+            public double PriceForSugar(int Sugar)
+             {
+                double sugar = 0;
+                switch (Sugar)
+                {
+                    case 8:
+                        sugar = .55;
+                        break;
+                    case 20:
+                        sugar = 1.52;
+                        break;
+                    case 48:
+                        sugar = 3.48;
+                        break;
+                }
+                 return sugar;
+            }
         public void PurchaseLemons(Inventory inventory)
         {
 
             UserInterface.LemonPurchasingOptions();
-            int lemons = int.Parse(Console.ReadLine());
+            lemons = int.Parse(Console.ReadLine());
+            ValidateLemons(inventory);
             inventory.Lemons += lemons;
-            
+            double lemonsPrice = PriceForLemons(lemons);
+            if (inventory.wallet >= lemonsPrice)
+            {
+                inventory.wallet = DeductPayment(lemonsPrice, inventory.wallet);
+            }
+            else
+            {
+                PurchaseLemons(inventory);
+            }
+
         }
-        //public int ValidateLemons()
-        //{
-        //    switch (Lemons)
-        //    {
-        //        case 10:
-        //            return Lemons;
-        //            break;
-        //        case 30:
-        //            return Lemons;
-        //            break;
-        //        case 75:
-        //            return Lemons;
-        //            break;
-        //        default:
-        //            Console.WriteLine("Please input a valid lemon amount.");
-        //            return PurchaseLemons();
-        //            break;
-        //    }
-        //}
-        public double priceforlemons(int lemon)
+        public void ValidateLemons(Inventory inventory)
+        {
+            switch (lemons)
+            {
+                case 10:
+                    lemons = 10;
+                    break;
+                case 30:
+                    lemons = 30;
+                    break;
+                case 75:
+                    lemons = 75;
+                    break;
+                default:
+                    Console.WriteLine("please input a valid lemon amount.");
+                    PurchaseLemons(inventory);
+                    break;
+            }
+        }
+        public double PriceForLemons(int lemon)
         {
             double lemons = 0;
             switch (lemon)
@@ -204,9 +244,10 @@ namespace LemonadeStand
         }
       
         public double DeductPayment(double item, double wallet)
-        {
+        {   
+                
                 wallet -= item;
-                return wallet;
+            return wallet;
 
         }
 

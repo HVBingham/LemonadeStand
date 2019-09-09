@@ -9,27 +9,29 @@ namespace LemonadeStand
     public class Day
     {
         Recipe newRecipe;
-        double DaysProfit;
-        Weather CurrentWeather;
+        double daysProfit;
+        Weather currentWeather;
         double lemonadePrice;
         int foreCastedTemp;
         public string clearity;
         public int actualTemp;
-        List<Customer> Customers;
+        List<Customer> customers;
+      
 
         public Day()
         {
-            Customers = new List<Customer>();
+            customers = new List<Customer>();
             newRecipe = new Recipe();
-            CurrentWeather = new Weather();
-            DaysProfit = 0;
+            currentWeather = new Weather();
+            daysProfit = 0;
+           
 
 
         }
         public void DisplayForCast()
         {
-            foreCastedTemp = CurrentWeather.FindHeat();
-            clearity = CurrentWeather.FindClearity();
+            foreCastedTemp = currentWeather.FindHeat();
+            clearity = currentWeather.FindClearity();
             UserInterface.DisplayDayForecast(clearity, foreCastedTemp);
         }
         public void NeedToGOToStore(string name, Player player)
@@ -72,21 +74,42 @@ namespace LemonadeStand
 
         }
         
-        //public int GetCustomers()
-        //{
 
-        //}
-           
+        public void HowManyCustomers()
+        {
+            int numberOfCustomers=0;
+            Random randomCustomers = new Random();
+            switch (clearity)
+            {
+                case "Sunny":
+                    numberOfCustomers = randomCustomers.Next(145, 200);
+                    break;
+                case "Overcast":
+                    numberOfCustomers = randomCustomers.Next(125, 175);
+                    break;
+                case "Cloudy":
+                    numberOfCustomers = randomCustomers.Next(80, 120);
+                    break;
+                case "Rainy":
+                    numberOfCustomers=randomCustomers.Next(20, 70);
+                    break;
+            }
+            for(int i=0; i<numberOfCustomers; i++)
+            {
+                customers.Add(new Customer());
+            }
 
-        
+        }
        
-       
-       
-        
 
-   
-        
-      
+
+
+
+
+
+
+
+
 
 
 

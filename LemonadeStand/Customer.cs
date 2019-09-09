@@ -8,37 +8,16 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        public int customers;
+        
         public int buyPercentage;
+      
 
         public Customer()
         {
-            customers = 0;
+           
             buyPercentage = 0;
         }
-        public void HowManyCustomers(Day day)
-        {
-            string clearity = day.clearity;
-           
-            Random randomCustomers = new Random();
-            switch (clearity)
-            {
-                case "Sunny":
-                    customers = randomCustomers.Next(145, 200);
-                    break;
-                case "Overcast":
-                    customers = randomCustomers.Next(125, 175);
-                    break;
-                case "Cloudy":
-                    customers = randomCustomers.Next(80, 120);
-                    break;
-                case "Rainy":
-                    customers = randomCustomers.Next(20, 70);
-                    break;                 
-            }
-
-            
-        }
+      
       
         public void ChanceOfSale(Day day)
         {
@@ -64,6 +43,8 @@ namespace LemonadeStand
             
 
         }
+        
+
 
 
     }

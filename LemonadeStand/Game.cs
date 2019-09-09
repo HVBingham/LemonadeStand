@@ -40,6 +40,8 @@ namespace LemonadeStand
                     week.Add(new Day());
                     week[i].DisplayForCast();
                     week[i].NeedToGOToStore(playerOne.standName, playerOne);
+                    UserInterface.DisplayInventoryItems(playerOne.PInventory);
+                    UserInterface.DisplaysWallet(playerOne.PInventory);
 
 
                 

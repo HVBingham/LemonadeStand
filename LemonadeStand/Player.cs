@@ -10,7 +10,6 @@ namespace LemonadeStand
     {
         public string name;
         public Inventory PInventory;
-        public double Wallet;
         public double TotalProfit;
         public string standName;
 
@@ -20,7 +19,6 @@ namespace LemonadeStand
         public Player()
         {
             PInventory  = new Inventory();
-            Wallet = 20.00;
             TotalProfit = 0;
 
         }
@@ -44,17 +42,19 @@ namespace LemonadeStand
         {
             store.PurchaseCups(PInventory);
             Console.Clear();
+            UserInterface.DisplaysWallet(PInventory);
             store.PurchaseIce(PInventory);
             Console.Clear();
+            UserInterface.DisplaysWallet(PInventory);
             store.PurchaseLemons(PInventory);
             Console.Clear();
+            UserInterface.DisplaysWallet(PInventory);
             store.PurchaseSugar(PInventory);
             Console.Clear();
+            UserInterface.DisplaysWallet(PInventory);
+            Console.Clear();
         }
-        public void DisplayItems()
-        {
-            UserInterface.DisplayInventoryItems(PInventory);
-        }
+      
         
           
 

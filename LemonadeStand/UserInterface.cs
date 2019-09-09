@@ -35,6 +35,10 @@ namespace LemonadeStand
         {
             Console.WriteLine("Day " +day );
         }
+        public static void DisplaysWallet(Inventory inventory)
+        {
+            Console.WriteLine("Your wallet has $"+inventory.wallet);
+        }
         public static void DisplayDayForecast(string clearity, int foreCastedTemp)
         {
             Console.WriteLine("The Forcasted Weather For the day is " + clearity + " and " + foreCastedTemp + " Degrees.");
@@ -90,10 +94,10 @@ namespace LemonadeStand
         }
         public static void DisplayInventoryItems (Inventory inventory)
         {
-            Console.WriteLine(inventory.Cups);
-            Console.WriteLine(inventory.Lemons);
-            Console.WriteLine(inventory.CupsOfSugar);
-            Console.WriteLine(inventory.Ice);
+            Console.WriteLine(inventory.Cups +" Cups");
+            Console.WriteLine(inventory.Lemons +" Lemons");
+            Console.WriteLine(inventory.CupsOfSugar +" Cups of Sugar");
+            Console.WriteLine(inventory.Ice +" Ice");
         }
         public static void CupsPrice()
         {
