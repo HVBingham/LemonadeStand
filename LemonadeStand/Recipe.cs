@@ -18,15 +18,57 @@ namespace LemonadeStand
             
         }
         
-        public void SetRecipe()
+        public void SetRecipe(Inventory inventory)
+        {
+            GetLemons(inventory);
+            GetSugar(inventory);
+            GetIce(inventory);
+          
+    
+         }
+        public void GetLemons(Inventory inventory)
         {
             UserInterface.RecipeStepOne();
-            lemons = int.Parse(Console.ReadLine());
+            int lemon = int.Parse(Console.ReadLine());
+            if(lemon <= inventory.Lemons)
+            {
+                lemons = lemon;
+            }
+            else
+            {
+                UserInterface.ValidationDisplay();
+                GetLemons(inventory);
+            }
+        }
+        public void GetSugar(Inventory inventory)
+        {
             UserInterface.RecipeStepTwo();
-            cupsOfSugar = int.Parse(Console.ReadLine());
+            int sugar = int.Parse(Console.ReadLine());
+            if (sugar <= inventory.CupsOfSugar)
+            {
+                sugar = cupsOfSugar;
+            }
+            else
+            {
+                UserInterface.ValidationDisplay();
+                GetSugar(inventory);
+            }
+
+        }
+        public void GetIce(Inventory inventory)
+        {
             UserInterface.RecipeStepThree();
-            iceCubes = int.Parse(Console.ReadLine());
-         }
+            int cubes = int.Parse(Console.ReadLine());
+            if (cubes <= inventory.Ice)
+            {
+                iceCubes = cubes;
+            }
+            else
+            {
+                UserInterface.ValidationDisplay();
+                GetIce(inventory);
+            }
+        }
 
            
         

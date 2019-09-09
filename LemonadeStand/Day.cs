@@ -40,9 +40,13 @@ namespace LemonadeStand
             String userAnswer = Console.ReadLine().ToLower();
             if (userAnswer == "yes")
             {
-               VistStore(player);
+                VistStore(player);
             }
-            //ToDo add and else statement so that they can play game with supplies they have.
+            else if (string.IsNullOrEmpty(userAnswer))
+            {
+                UserInterface.ValidationDisplay();
+                NeedToGOToStore(name, player);
+            }
         }
         public void VistStore(Player player)
         {
@@ -51,11 +55,19 @@ namespace LemonadeStand
             player.PurchaseItems(Walmart);
         }
 
+         public int ActualWeather()
+         {
+                    Random rnd = new Random();
+                    int RandomNumber = rnd.Next(-3, 3);
+                    actualTemp = RandomNumber + foreCastedTemp;
+                    UserInterface.DisplayActualWeather(actualTemp, clearity);
+                    return actualTemp;
 
+         }
 
-        public void SetRecipe()
+        public void SetRecipe(Inventory inventory)
         {
-            newRecipe.SetRecipe();
+            newRecipe.SetRecipe(inventory);
         }
 
       
@@ -64,15 +76,7 @@ namespace LemonadeStand
             UserInterface.CupsPrice();
             lemonadePrice = double.Parse(Console.ReadLine());
         }
-       public int ActualWeather()
-        {
-            Random rnd = new Random();
-            int RandomNumber = rnd.Next(-3, 3);
-            actualTemp = RandomNumber + foreCastedTemp;
-            UserInterface.DisplayActualWeather(actualTemp, clearity);
-            return actualTemp;
-
-        }
+      
         
 
         public void HowManyCustomers()
@@ -101,7 +105,11 @@ namespace LemonadeStand
 
         }
        
-   
+        public void DidCustomersBuy()
+        {
+          
+
+        }
 
 
 

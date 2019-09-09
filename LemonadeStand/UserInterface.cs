@@ -33,7 +33,7 @@ namespace LemonadeStand
         }   
         public static void ValidationDisplay()
         {
-            Console.WriteLine("You must write an input");
+            Console.WriteLine("You must write a valid input");
         }
 
         public static void DisplaysWallet(Inventory inventory)

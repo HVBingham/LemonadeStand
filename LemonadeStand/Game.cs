@@ -37,6 +37,7 @@ namespace LemonadeStand
             Console.Clear();
                 for (int i = 0; i < lengthOfWeek; i++)
                 {
+             
                     week.Add(new Day());
                     week[i].DisplayForCast();
                     week[i].NeedToGOToStore(playerOne.standName, playerOne);
@@ -47,6 +48,8 @@ namespace LemonadeStand
                         Console.WriteLine("Day " +i+1);
                      }
                     week[i].ActualWeather();
+                    week[i].SetRecipe(playerOne.PInventory);
+                    week[i].SetCupPrice();
                     week[i].HowManyCustomers();
 
 
