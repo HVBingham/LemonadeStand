@@ -9,13 +9,13 @@ namespace LemonadeStand
     public class Customer
     {
         
-        public int buyPercentage;
+        public bool buyPercentage;
       
 
         public Customer()
         {
            
-            buyPercentage = 0;
+            buyPercentage = false;
         }
       
       
@@ -26,19 +26,20 @@ namespace LemonadeStand
 
             if (heat >= 90)
             {
-                buyPercentage = Chance.Next(75, 100);
+                buyPercentage = true;
+                
             }
             else if (heat >= 80)
             {
-                buyPercentage = Chance.Next(55, 75);
+                buyPercentage = true;
             }
             else if (heat >= 70)
             {
-                buyPercentage = Chance.Next(35, 55);
+                buyPercentage = true;
             }
             else if (heat <= 60)
             {
-                buyPercentage = Chance.Next(15, 35);
+                buyPercentage = true;
             }
             
 

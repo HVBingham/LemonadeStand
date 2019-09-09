@@ -55,6 +55,9 @@ namespace LemonadeStand
                 case 100:
                     cups=100;
                     break;
+                case 0:
+                    cups += 0;
+                    break;
                 default:
                     Console.WriteLine("Please pick a vaild cup amount");
                     PurchaseCups(inventory);
@@ -83,10 +86,10 @@ namespace LemonadeStand
         public void PurchaseIce(Inventory inventory)
         {
             UserInterface.IcePurchasingOptions();
-            int cubes = int.Parse(Console.ReadLine());
+            ice = int.Parse(Console.ReadLine());
             ValidateIce(inventory);
-            inventory.Ice += cubes;
-            double icePrice = PriceForIce(cubes);
+            inventory.Ice += ice;
+            double icePrice = PriceForIce(ice);
             if (inventory.wallet >= icePrice)
             {
                 inventory.wallet = DeductPayment(icePrice, inventory.wallet);
@@ -109,6 +112,9 @@ namespace LemonadeStand
                     break;
                 case 500:
                     ice = 500;
+                    break;
+                case 0:
+                    ice += 0;
                     break;
                 default:
                     Console.WriteLine("Please input a valid Ice amount");
@@ -164,6 +170,9 @@ namespace LemonadeStand
                 case 48:
                     sugar = 48;
                     break;
+                case 0:
+                    sugar += 0;
+                    break;
                 default:
                     Console.WriteLine("Please input a valid Sugar amount.");
                     PurchaseSugar(inventory);
@@ -218,6 +227,9 @@ namespace LemonadeStand
                     break;
                 case 75:
                     lemons = 75;
+                    break;
+                case 0:
+                    lemons += 0;
                     break;
                 default:
                     Console.WriteLine("please input a valid lemon amount.");

@@ -17,7 +17,7 @@ namespace LemonadeStand
        
         public Inventory()
         {
-            wallet = 20.00;
+           wallet = 20.00;
            Cups = 0;
            Lemons = 0;
            CupsOfSugar = 0;

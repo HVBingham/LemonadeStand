@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Game
     {
         Player playerOne;
-        List<Day> week;
+      public  List<Day> week;
 
         
       
@@ -42,6 +42,12 @@ namespace LemonadeStand
                     week[i].NeedToGOToStore(playerOne.standName, playerOne);
                     UserInterface.DisplayInventoryItems(playerOne.PInventory);
                     UserInterface.DisplaysWallet(playerOne.PInventory);
+                    foreach(Day day in week)
+                     {
+                        Console.WriteLine("Day " +i+1);
+                     }
+                    week[i].ActualWeather();
+                    week[i].HowManyCustomers();
 
 
                 

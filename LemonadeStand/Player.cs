@@ -29,12 +29,22 @@ namespace LemonadeStand
 
             UserInterface.UserName();
             name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                UserInterface.ValidationDisplay();
+                GetPlayerName();
+            }
             return name;
         }
         public string GetStandName()
         {
             UserInterface.StandName(name);
             standName = Console.ReadLine();
+            if (string.IsNullOrEmpty(standName))
+            {
+                UserInterface.ValidationDisplay();
+                GetStandName();
+            }
             return standName;
         }
 

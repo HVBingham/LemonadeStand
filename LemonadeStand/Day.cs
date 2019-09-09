@@ -15,7 +15,7 @@ namespace LemonadeStand
         int foreCastedTemp;
         public string clearity;
         public int actualTemp;
-        List<Customer> customers;
+         public List<Customer> customers;
       
 
         public Day()
@@ -101,8 +101,7 @@ namespace LemonadeStand
 
         }
        
-
-
+   
 
 
 
