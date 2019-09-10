@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Recipe
+    public class Recipe
     {
-        int cups;
-        int lemons;
-        int cupsOfSugar;
-        int iceCubes;
-        
+        public int cups;
+        public int lemons;
+        public int cupsOfSugar;
+        public int iceCubes;
+         
         public Recipe()
         {
             

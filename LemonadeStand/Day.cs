@@ -15,7 +15,8 @@ namespace LemonadeStand
         int foreCastedTemp;
         public string clearity;
         public int actualTemp;
-         public List<Customer> customers;
+        public List<Customer> customers;
+        int pitcher;
       
 
         public Day()
@@ -24,6 +25,7 @@ namespace LemonadeStand
             newRecipe = new Recipe();
             currentWeather = new Weather();
             daysProfit = 0;
+            pitcher = 6;
            
 
 
@@ -104,26 +106,77 @@ namespace LemonadeStand
             }
 
         }
-       
-        public void DidCustomersBuy()
+        public bool DidCustomerBuy()
         {
-            HowManyCustomers();
-           
-
+            bool didCustomerBuy = false;
+            if (actualTemp >= 75)
+            {
+                if (lemonadePrice <= 50)
+                {
+                    didCustomerBuy = true;
+                }
+                else if (lemonadePrice > 50)
+                {
+                    didCustomerBuy = false;
+                }
+            }
+            else if (actualTemp <= 75)
+            {
+                if (lemonadePrice > 50)
+                {
+                    didCustomerBuy = false;
+                }
+                else if (lemonadePrice <= 25)
+                {
+                    didCustomerBuy = true;
+                }
+            }
+            return didCustomerBuy;
         }
+    
         public void DeductRecipeFromInventory(Recipe recipe, Inventory inventory)
         {
             
-           
+            int purchasedcup = 1;
 
+            bool customerBuysCup = false;
+            customerBuysCup=DidCustomerBuy();
 
+            if (customerBuysCup == true)
+            {
+                pitcher -= purchasedcup;
+            }
         }
-        public void DaysProfitTotal()
+        public void CheckPitcher(Inventory inventory, Recipe recipe)
         {
+            bool isPitcherEmpty;
+            if (pitcher == 0)
+            {
+                isPitcherEmpty = true;
+                if (isPitcherEmpty == true)
+                {
+                    RefillPitcher(inventory, recipe);
 
+                }
+            }
+        }
+       
+        public void RefillPitcher(Inventory inventory, Recipe recipe)
+        {
+            inventory.Lemons -= recipe.lemons;
+            inventory.CupsOfSugar -= recipe.cupsOfSugar;
+            inventory.Cups -= pitcher;
+            inventory.Ice -= (recipe.iceCubes * pitcher);
+            pitcher = 6;
         }
 
-      
+         public void DaysProfitTotal(Inventory inventory, Recipe recipe)
+         {
+           
+            
+
+         }
+
 
 
 
