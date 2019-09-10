@@ -50,7 +50,9 @@ namespace LemonadeStand
                     week[i].ActualWeather();
                     week[i].SetRecipe(playerOne.PInventory);
                     week[i].SetCupPrice();
+
                     week[i].HowManyCustomers();
+                    UserInterface.DispalyDailyProfit(week[i]);
 
 
                 

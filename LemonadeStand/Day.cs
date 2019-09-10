@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Day
     {
         Recipe newRecipe;
-        double daysProfit;
+        public double daysProfit;
         Weather currentWeather;
         double lemonadePrice;
         int foreCastedTemp;
@@ -107,11 +107,23 @@ namespace LemonadeStand
        
         public void DidCustomersBuy()
         {
-          
+            HowManyCustomers();
+           
+
+        }
+        public void DeductRecipeFromInventory(Recipe recipe, Inventory inventory)
+        {
+            
+           
+
+
+        }
+        public void DaysProfitTotal()
+        {
 
         }
 
-
+      
 
 
 

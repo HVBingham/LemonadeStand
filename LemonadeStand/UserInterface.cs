@@ -105,7 +105,10 @@ namespace LemonadeStand
         {
             Console.WriteLine("How much would you like to charge per cup for lemonade today?");
         }
-        
+        public static void DispalyDailyProfit(Day day)
+        {
+            Console.WriteLine("Todays Profit is " +day.daysProfit);
+        }
 
 
 
